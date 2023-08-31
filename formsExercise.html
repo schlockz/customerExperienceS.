@@ -1,108 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Survey" content="Survey">
-    <title>Survey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTML Forms Exercise">
+  <title>Survey</title>
 </head>
 <body>
-    <form>
-        <fieldset>
-            <legend>Customer Experience Survey</legend>
-            <label for="storeNumber">Store Number</label>
-            <select name="storeNumber" id="storeNumber">
-            <option value="3109">3109</option>
-            <option value="2421">2421</option>
-            <option value="5354">5354</option>
-            </select>
-   
-    <form>
-       <fieldset>
-        <legend>When You Visited</legend>
-        <label for="today">Date Visited:</label>
-        <input type="date" name="today" id="today" min="2022-01-01" max="2023-12-31">
-       <br>
-        <label for="Time">Time:</label>
-        <input type="time" name="number" id="number" min="1" max="30">
-       </fieldset> 
-    </form>
-    <form>
-        <label for="fullName">Full Name:</label>
-        <input type="text" placeholder="Name" name="fullName">
-       <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Email" name="email">
-    </form>
-    <form>
-        <fieldset>
-         <legend>How would you rate your level of satisfaction with your visit</legend>
-         <input type="radio" name="joes" id="Satisfied" value="Satisfied">
-         <label for="Satisfied">Satisfied</label>
-         <br>
-         <input type="radio" name="joes" id="NeitherSatisfiedorDissatisfied" value="NeitherSatisfiedorDissatisfied"checked>
-         <label for="NeitherSatisfiedorDissatisfied">Neither Satisfied or Dissatisfied</label>
-         <br>
-         <input type="radio" name="joes" id="dissatisfied" value="Dissatisfied">
-         <label for="Dissatisfied">Dissatisfied</label>
-        </fieldset> 
-     </form>
-     <form>
-        <label for="experience">Tell us about your experience:</label>
+
+  <form>
+    <fieldset>
+      <legend>Customer Experience Survey</legend>
+
+      <label for="storeNumber">Store Number</label>
+      <select name="storeNumber" id="storeNumber">
+        <option hidden>Select A Store</option>
+        <option value="3109">3109</option>
+        <option value="2421">2421</option>
+        <option value="5357">5357</option>
+      </select>
+
+      <fieldset>
+        <legend>When you visited:</legend>
+
+        <label for="dateVisited">Date Visited</label>
+        <input type="date" id="dateVisited" name="dateVisited" min="2022-01-01" max="2022-12-31">
+
         <br>
-        <textarea name="experience" id="experience" cols="20" rows="2"></textarea>
-     </form>
-     <form>
-      <label for="visitation">Times visited in the last month:</label>
+
+        <label for="time">Time</label>
+        <input type="time" name="time" id="time">
+
+      </fieldset>
+
+      <label for="fullName">Full Name:</label>
+      <input type="text" name="fullName" id="fullName" placeholder="Name">
       <br>
-      <input type="number" name="visitation" id="visitation" >
-     </form>
-     <form>
-     <input type="checkbox" name="agree" id="userAgree" required>
-     <label for="userAgree">Please check the box if you'd be willing to be contacted about your experience</label> 
-      </form>
-    <form>
-        <label for="passwordInput">Password</label>
-        <input type="password" pattern=".{5,10}" name="passwordInput" id="passwordInput" title="Please enter a password that is 5 to 10 characters in length" >
-
-    </form>
-     <form>
-    <button class="submit-button" value="submit">Submit</button>
-    
-    <button class="reset-button" value="reset">Reset</button>
-    <style> 
-    .reset-button{
-    color:white;
-    background-color: rgb(44, 73, 202);
-    border:none;
-    border-radius: 5px;
-    cursor:pointer;
-    padding-left: 2px;
-    padding-right: 2px;
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Email">
+      <fieldset>
+        <legend>How would you rate your level of satisfaction with your visit?</legend>
+        <input type="radio" name="visit" id="satisfied" value="satisfied">
+        <label for="satisfied">Satisfied</label>
+       <br>
+        <input type="radio" name="visit" id="neither" value="neither" checked>
+      
+        <label for="neither">Neither Satisfied nor Dissatisfied</label>
+        <br>
+        <input type="radio" name="visit" id="dissatisfied" value="dissatisfied">
+        <label for="dissatisfied">Dissatisfied</label>
+      </fieldset>
+      <label for="experience">Tell us about your experience:</label>
+      <br>
+      <textarea name="experience" id="experience" cols="20" rows="2"></textarea>
+      <br>
+      <label for="times">Times visited last month:</label>
+      <br>
+      <input type="number" id="times" name="times" min="1" max="30">
+      <br>
+      <input type="checkbox" name="contact" id="contact" required>
+      <label for="contact">Please check the box if you would be willing to be contacted about your experience</label>
+      <br>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" pattern=".{5,10}" autofocus required title="Please enter a password that is 5 to 10 characters in length">
+      <br>
+      <button class="reset-button">Reset</button>
+      <button class="submit-button">Submit</button>
+      <style>
+        .reset-button{
+color:white;
+background-color: rgb(44, 73, 202);
+border:none;
+border-radius: 5px;
+cursor:pointer;
 }
-    .reset-button:active{
-        background-color: rgb(28, 50, 149);
-    }
-    .reset-button:hover{
-        color: rgb(0, 0, 255);
-    }
-    .submit-button {
-        color: white;
-        background-color: rgb(125, 197, 239);
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .submit-button:active{
-        background-color: rgb(185, 216, 226);
-    }
-    .submit-button:hover {
-     color: blue;
-    }
+.reset-button:active{
+background-color: rgb(28, 50, 149);
+}
+.reset-button:hover{
+color: rgb(0, 0, 255);
+}
+.submit-button {
+color: white;
+background-color: rgb(125, 197, 239);
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.submit-button:active{
+background-color: rgb(185, 216, 226);
+}
+.submit-button:hover {
+color: blue;
+}
 
-    </style>
-
-
-     </form>
+      </style>
+    </fieldset>
+  </form>
+  
 </body>
 </html>
